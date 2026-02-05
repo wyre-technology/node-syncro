@@ -1,3 +1,17 @@
+# 1.0.0 (2026-02-05)
+
+
+### Bug Fixes
+
+* Add ESLint configuration file ([820fa78](https://github.com/asachs01/node-syncro/commit/820fa78bd529e8a243b4b92e9853496f0a2d3da4))
+* Add semantic-release plugins as devDependencies ([8224cf8](https://github.com/asachs01/node-syncro/commit/8224cf869ae5e07cdd153068e35fbb3018845e1a))
+
+
+### Features
+
+* Add semantic-release for GitHub Packages publishing ([2b828e8](https://github.com/asachs01/node-syncro/commit/2b828e850fd86a68a8f9ff688a56dc1f4eeec192))
+* Initial release of node-syncro v0.1.0 ([5024b65](https://github.com/asachs01/node-syncro/commit/5024b65df786edb21fe3e3ff11a959ed013dec1b))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
