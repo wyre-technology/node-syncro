@@ -1,5 +1,5 @@
 {
-  "name": "@asachs01/node-syncro",
+  "name": "@wyre-technology/node-syncro",
   "version": "1.0.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -48,16 +48,16 @@
     "ticketing",
     "invoicing"
   ],
-  "author": "Aaron Sachs",
+  "author": "Wyre Technology",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/asachs01/node-syncro.git"
+    "url": "git+https://github.com/wyre-technology/node-syncro.git"
   },
   "bugs": {
-    "url": "https://github.com/asachs01/node-syncro/issues"
+    "url": "https://github.com/wyre-technology/node-syncro/issues"
   },
-  "homepage": "https://github.com/asachs01/node-syncro#readme",
+  "homepage": "https://github.com/wyre-technology/node-syncro#readme",
   "engines": {
     "node": ">=18.0.0"
   },
