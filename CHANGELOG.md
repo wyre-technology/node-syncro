@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/wyre-technology/node-syncro/compare/v1.0.0...v1.0.1) (2026-03-02)
+
+
+### Bug Fixes
+
+* require Node 22+ (semantic-release@25 compatibility) ([ab6e86a](https://github.com/wyre-technology/node-syncro/commit/ab6e86a01135a25b09a23af0171044a0ea626e2f))
+* require Node 22+ (semantic-release@25 compatibility) ([b025ff8](https://github.com/wyre-technology/node-syncro/commit/b025ff8c41fb49fc6b37da29283dfedc51145049))
+
 # 1.0.0 (2026-02-05)
 
 
