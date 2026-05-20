@@ -29,6 +29,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Add `"type": "module"` to `package.json` so tsup emits `index.js` (ESM) and
+  `index.cjs` (CJS), matching the `main`/`exports` map. Previously `require()`
+  of the published package failed because the files did not exist.
+- Make the 5xx server-error retry path consistent with the 429 path. It now
+  uses the configurable `rateLimit.maxRetries` and exponential backoff instead
+  of a single hardcoded retry with a fixed 1000ms delay.
+- Remove unused `url` variable declarations from the test mock handlers that
+  were failing `eslint`.
+
+### Changed
+
+- Standardize the Node.js baseline on Node 22: bump `@types/node` to `^22`,
+  set the `tsup` build target to `node22`, and align the CI matrix to Node 22.
+  Note: `eslint` remains at v8 (EOL) deliberately — a v10 upgrade requires a
+  flat-config rewrite and is out of scope here.
+
+### Security
+
+- Run `npm audit fix` for non-breaking advisories, reducing reported
+  vulnerabilities from 23 to 8. The remaining 8 (all devDependencies) require a
+  major `vitest` v4 upgrade and were left in place to avoid breaking changes.
+
+- Send the Syncro API key in the `Authorization` request header instead of an
+  `api_key` URL query parameter, preventing the key from leaking into server
+  and proxy access logs.
+
 ## [0.1.0] - 2026-02-04
 
 ### Added

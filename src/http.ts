@@ -43,12 +43,10 @@ export class HttpClient {
   async request<T>(path: string, options: RequestOptions = {}): Promise<T> {
     const { method = 'GET', body, params } = options;
 
-    // Build the URL with API key
+    // Build the URL. The API key is sent via the Authorization header
+    // (see executeRequest) so it never leaks into server/proxy logs.
     let url = `${this.config.baseUrl}/api/v1${path}`;
     const searchParams = new URLSearchParams();
-
-    // Always add the API key as a query parameter
-    searchParams.append('api_key', this.config.apiKey);
 
     // Add any additional params
     if (params) {
@@ -59,7 +57,10 @@ export class HttpClient {
       }
     }
 
-    url += `?${searchParams.toString()}`;
+    const queryString = searchParams.toString();
+    if (queryString) {
+      url += `?${queryString}`;
+    }
 
     return this.executeRequest<T>(url, method, body);
   }
@@ -68,11 +69,10 @@ export class HttpClient {
    * Make a request to a full URL (for pagination)
    */
   async requestUrl<T>(url: string): Promise<T> {
-    // Ensure API key is in the URL
+    // The API key is sent via the Authorization header in executeRequest.
+    // Strip any legacy api_key query parameter so it never leaks into logs.
     const urlObj = new URL(url);
-    if (!urlObj.searchParams.has('api_key')) {
-      urlObj.searchParams.append('api_key', this.config.apiKey);
-    }
+    urlObj.searchParams.delete('api_key');
     return this.executeRequest<T>(urlObj.toString(), 'GET', undefined);
   }
 
@@ -88,10 +88,13 @@ export class HttpClient {
     // Wait for a rate limit slot
     await this.rateLimiter.waitForSlot();
 
-    // Build headers
+    // Build headers. The API key is sent via the Authorization header
+    // rather than a URL query parameter so it is not exposed in
+    // server access logs, proxy logs, or browser history.
     const headers: Record<string, string> = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
+      'Authorization': `Bearer ${this.config.apiKey}`,
     };
 
     // Record the request
@@ -173,10 +176,12 @@ export class HttpClient {
 
       default:
         if (response.status >= 500) {
-          // Server error - retry once
-          if (retryCount === 0) {
-            await this.sleep(1000);
-            return this.executeRequest<T>(url, method, body, 1);
+          // Server error - retry with the same configurable
+          // max-retries and backoff used for 429 responses.
+          if (this.rateLimiter.shouldRetry(retryCount)) {
+            const delay = this.rateLimiter.calculateRetryDelay(retryCount);
+            await this.sleep(delay);
+            return this.executeRequest<T>(url, method, body, retryCount + 1);
           }
           throw new SyncroServerError(
             `Server error: ${response.status} ${response.statusText}`,
