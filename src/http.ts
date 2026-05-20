@@ -176,10 +176,12 @@ export class HttpClient {
 
       default:
         if (response.status >= 500) {
-          // Server error - retry once
-          if (retryCount === 0) {
-            await this.sleep(1000);
-            return this.executeRequest<T>(url, method, body, 1);
+          // Server error - retry with the same configurable
+          // max-retries and backoff used for 429 responses.
+          if (this.rateLimiter.shouldRetry(retryCount)) {
+            const delay = this.rateLimiter.calculateRetryDelay(retryCount);
+            await this.sleep(delay);
+            return this.executeRequest<T>(url, method, body, retryCount + 1);
           }
           throw new SyncroServerError(
             `Server error: ${response.status} ${response.statusText}`,

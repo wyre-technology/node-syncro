@@ -26,7 +26,6 @@ export const handlers = [
   }),
 
   http.get(`${API_BASE}/customers/:id`, ({ request, params }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -39,7 +38,6 @@ export const handlers = [
   }),
 
   http.post(`${API_BASE}/customers`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -48,7 +46,6 @@ export const handlers = [
   }),
 
   http.put(`${API_BASE}/customers/:id`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -57,7 +54,6 @@ export const handlers = [
   }),
 
   http.delete(`${API_BASE}/customers/:id`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -67,7 +63,6 @@ export const handlers = [
 
   // Contacts endpoints
   http.get(`${API_BASE}/contacts`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -76,7 +71,6 @@ export const handlers = [
   }),
 
   http.get(`${API_BASE}/contacts/:id`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -85,7 +79,6 @@ export const handlers = [
   }),
 
   http.post(`${API_BASE}/contacts`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -94,7 +87,6 @@ export const handlers = [
   }),
 
   http.put(`${API_BASE}/contacts/:id`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -103,7 +95,6 @@ export const handlers = [
   }),
 
   http.delete(`${API_BASE}/contacts/:id`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -113,7 +104,6 @@ export const handlers = [
 
   // Tickets endpoints
   http.get(`${API_BASE}/tickets`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -122,7 +112,6 @@ export const handlers = [
   }),
 
   http.get(`${API_BASE}/tickets/:id`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -131,7 +120,6 @@ export const handlers = [
   }),
 
   http.post(`${API_BASE}/tickets`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -140,7 +128,6 @@ export const handlers = [
   }),
 
   http.put(`${API_BASE}/tickets/:id`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -149,7 +136,6 @@ export const handlers = [
   }),
 
   http.delete(`${API_BASE}/tickets/:id`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -158,7 +144,6 @@ export const handlers = [
   }),
 
   http.post(`${API_BASE}/tickets/:id/comment`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -167,7 +152,6 @@ export const handlers = [
   }),
 
   http.get(`${API_BASE}/tickets/:id/timer`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -176,7 +160,6 @@ export const handlers = [
   }),
 
   http.post(`${API_BASE}/tickets/:id/timer`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -185,7 +168,6 @@ export const handlers = [
   }),
 
   http.put(`${API_BASE}/tickets/:id/timer`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -194,7 +176,6 @@ export const handlers = [
   }),
 
   http.delete(`${API_BASE}/tickets/:id/timer`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -204,7 +185,6 @@ export const handlers = [
 
   // Assets endpoints
   http.get(`${API_BASE}/customer_assets`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -213,7 +193,6 @@ export const handlers = [
   }),
 
   http.get(`${API_BASE}/customer_assets/:id`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -222,7 +201,6 @@ export const handlers = [
   }),
 
   http.post(`${API_BASE}/customer_assets`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -231,7 +209,6 @@ export const handlers = [
   }),
 
   http.put(`${API_BASE}/customer_assets/:id`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -240,7 +217,6 @@ export const handlers = [
   }),
 
   http.delete(`${API_BASE}/customer_assets/:id`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -250,7 +226,6 @@ export const handlers = [
 
   // Invoices endpoints
   http.get(`${API_BASE}/invoices`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -259,7 +234,6 @@ export const handlers = [
   }),
 
   http.get(`${API_BASE}/invoices/:id`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -268,7 +242,6 @@ export const handlers = [
   }),
 
   http.post(`${API_BASE}/invoices`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -277,7 +250,6 @@ export const handlers = [
   }),
 
   http.put(`${API_BASE}/invoices/:id`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -286,7 +258,6 @@ export const handlers = [
   }),
 
   http.delete(`${API_BASE}/invoices/:id`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -295,7 +266,6 @@ export const handlers = [
   }),
 
   http.post(`${API_BASE}/invoices/:id/email`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -304,7 +274,6 @@ export const handlers = [
   }),
 
   http.post(`${API_BASE}/invoices/:id/print`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -313,7 +282,6 @@ export const handlers = [
   }),
 
   http.put(`${API_BASE}/invoices/:id/mark_sent`, async ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -323,7 +291,6 @@ export const handlers = [
 
   // Settings and Me endpoints
   http.get(`${API_BASE}/settings`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
@@ -332,7 +299,6 @@ export const handlers = [
   }),
 
   http.get(`${API_BASE}/me`, ({ request }) => {
-    const url = new URL(request.url);
     if (!request.headers.get('authorization')) {
       return HttpResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
