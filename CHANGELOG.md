@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/wyre-technology/node-syncro/compare/v1.0.1...v1.0.2) (2026-05-20)
+
+
+### Bug Fixes
+
+* packaging exports + remove API key from URLs ([#2](https://github.com/wyre-technology/node-syncro/issues/2)) ([ec25bce](https://github.com/wyre-technology/node-syncro/commit/ec25bce9594befa7a7b802ec0e218cccf237c49c))
+
 ## [1.0.1](https://github.com/wyre-technology/node-syncro/compare/v1.0.0...v1.0.1) (2026-03-02)
 
 
