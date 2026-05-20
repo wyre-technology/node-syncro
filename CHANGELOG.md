@@ -29,6 +29,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Add `"type": "module"` to `package.json` so tsup emits `index.js` (ESM) and
+  `index.cjs` (CJS), matching the `main`/`exports` map. Previously `require()`
+  of the published package failed because the files did not exist.
+
+### Security
+
+- Send the Syncro API key in the `Authorization` request header instead of an
+  `api_key` URL query parameter, preventing the key from leaking into server
+  and proxy access logs.
+
 ## [0.1.0] - 2026-02-04
 
 ### Added
