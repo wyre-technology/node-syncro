@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/wyre-technology/node-syncro/compare/v1.0.3...v1.0.4) (2026-07-18)
+
+
+### Bug Fixes
+
+* **tsconfig:** restore include/exclude globs ([#43](https://github.com/wyre-technology/node-syncro/issues/43)) ([fdcac1e](https://github.com/wyre-technology/node-syncro/commit/fdcac1e4bfdd7931d8185edd8d9d3f4103dcfbdf))
+
 ## [1.0.3](https://github.com/wyre-technology/node-syncro/compare/v1.0.2...v1.0.3) (2026-06-08)
 
 
