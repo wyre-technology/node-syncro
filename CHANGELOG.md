@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/wyre-technology/node-syncro/compare/v1.0.4...v1.0.5) (2026-07-18)
+
+
+### Bug Fixes
+
+* read HTTP response bodies exactly once ([#57](https://github.com/wyre-technology/node-syncro/issues/57)) ([ddd68ce](https://github.com/wyre-technology/node-syncro/commit/ddd68cece1d7c7ae1d95f333626c0450579afbb4))
+
 ## [1.0.4](https://github.com/wyre-technology/node-syncro/compare/v1.0.3...v1.0.4) (2026-07-18)
 
 
