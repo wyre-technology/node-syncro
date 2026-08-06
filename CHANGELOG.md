@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/wyre-technology/node-syncro/compare/v1.0.5...v1.0.6) (2026-08-06)
+
+
+### Bug Fixes
+
+* **deps:** ignore unreachable ip-address advisory in dependabot config ([#68](https://github.com/wyre-technology/node-syncro/issues/68)) ([3847cb6](https://github.com/wyre-technology/node-syncro/commit/3847cb6f2ef728c045e3d8052c424ae518f8303e))
+
 ## [1.0.5](https://github.com/wyre-technology/node-syncro/compare/v1.0.4...v1.0.5) (2026-07-18)
 
 
